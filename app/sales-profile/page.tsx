@@ -193,11 +193,12 @@ export default function SalesProfilePage() {
               <p className="text-sm text-muted-foreground">Personal credit portfolio management</p>
             </div>
             <div className="flex items-center gap-3">
-              {/* Changed Export Report to New Customer */}
-              <Button variant="outline" size="sm">
-                <Plus className="h-4 w-4 mr-2" />
-                New Customer
-              </Button>
+              <Link href="/new-customer-search">
+                <Button variant="outline" size="sm">
+                  <Plus className="h-4 w-4 mr-2" />
+                  New Customer
+                </Button>
+              </Link>
               <Link href="/credit-request">
                 <Button variant="outline" size="sm">
                   <Plus className="h-4 w-4 mr-2" />

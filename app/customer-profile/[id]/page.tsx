@@ -200,10 +200,6 @@ export default function CustomerProfilePage() {
   const tabs = [
     { id: "overview", label: "Overview" },
     { id: "credit-details", label: "Credit Details" },
-    { id: "order-history", label: "Order History" },
-    { id: "payment-history", label: "Payment History" },
-    { id: "outstanding-invoices", label: "Outstanding Invoices" },
-    { id: "sanction-kyc", label: "Sanction & KYC" },
     { id: "recent-activity", label: "Recent Activity" },
   ]
 
