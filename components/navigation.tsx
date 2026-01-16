@@ -3,13 +3,14 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import { LayoutDashboard, UserCircle, TrendingUp, BarChart3 } from "lucide-react"
+import { LayoutDashboard, UserCircle, TrendingUp, BarChart3, ClipboardCheck } from "lucide-react"
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
   { name: "Customer Profile", href: "/customer-profile", icon: UserCircle },
   { name: "Sales Profile", href: "/sales-profile", icon: TrendingUp },
   { name: "Sales Performance Dashboard", href: "/sales-performance", icon: BarChart3 },
+  { name: "Approval", href: "/approval", icon: ClipboardCheck },
 ]
 
 export function Navigation() {
@@ -20,7 +21,9 @@ export function Navigation() {
       {navigation.map((item) => {
         const Icon = item.icon
         const isActive =
-          pathname === item.href || (item.href === "/customer-profile" && pathname.startsWith("/customer-profile"))
+          pathname === item.href ||
+          (item.href === "/customer-profile" && pathname.startsWith("/customer-profile")) ||
+          (item.href === "/approval" && pathname.startsWith("/approval"))
         return (
           <Link
             key={item.name}
