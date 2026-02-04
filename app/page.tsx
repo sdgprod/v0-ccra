@@ -92,7 +92,8 @@ export default function DashboardPage() {
 
     // Calculate average credit score based on ratings
     // Convert ratings to numeric scores: High=800, Medium=650, Low=500
-    const ratingToScore = (rating: string) => {
+    const ratingToScore = (rating: string | undefined) => {
+      if (!rating) return 500
       const r = rating.toLowerCase()
       if (r.includes("high")) return 800
       if (r.includes("medium")) return 650
@@ -165,7 +166,7 @@ export default function DashboardPage() {
     setPortfolio2Loading(true)
     try {
       const response = await fetch(
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CM_Dummy_CSV-4EnIlWBbAqA22lDkJZao8wdaKc11Ek.csv",
+        "/images/cm-dummy-csv.csv",
       )
       const csvText = await response.text()
 
@@ -586,18 +587,17 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-sm border bg-slate-800 text-white">
+        <Card className="shadow-sm border bg-red-600 text-white">
           <CardContent className="p-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-300">Total Exposure</p>
+                <p className="text-sm font-medium text-red-100">Total Exposure</p>
                 <p className="text-4xl font-bold mt-2">
-                  MYR {dashboardStats.totalExposure.toLocaleString("en-MY", { maximumFractionDigits: 0 })}
+                  MYR 147,000,000
                 </p>
-                <p className="text-sm text-slate-300 mt-2">Shareholder funds</p>
               </div>
-              <div className="rounded-lg bg-slate-700 p-2.5">
-                <DollarSign className="h-5 w-5 text-slate-300" />
+              <div className="rounded-lg bg-red-500 p-2.5">
+                <DollarSign className="h-5 w-5 text-red-100" />
               </div>
             </div>
           </CardContent>
