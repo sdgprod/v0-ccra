@@ -15,6 +15,15 @@ import {
   Clock,
   Shield,
   TrendingUp,
+  Package,
+  Boxes,
+  MapPin,
+  Ship,
+  Scale,
+  Calculator,
+  AlertTriangle,
+  Globe,
+  FileCheck,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card"
@@ -507,82 +516,200 @@ export default function ApprovalDetailPage() {
                   Order Information
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Product Information */}
+              <CardContent className="space-y-8">
+                {/* Product Information - Card Style */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {/* Trading Currency Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <DollarSign className="h-5 w-5 text-blue-600" />
+                        <span className="font-semibold">Trading Currency</span>
+                      </div>
+                      <div className="space-y-4">
+                        <div className="border-b pb-2">
+                          <p className="text-sm text-muted-foreground">Currency</p>
+                          <p className="font-semibold text-lg">MYR</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Description</p>
+                          <p className="font-semibold">Malaysian Ringgit</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Refinery Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Building2 className="h-5 w-5 text-purple-600" />
+                        <span className="font-semibold">Refinery Details</span>
+                      </div>
+                      <div className="space-y-4">
+                        <div className="border-b pb-2">
+                          <p className="text-sm text-muted-foreground">Refinery Name</p>
+                          <p className="font-semibold text-lg">Pasir Gudang</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Location</p>
+                          <p className="font-semibold">Johor, Malaysia</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Product Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Package className="h-5 w-5 text-green-600" />
+                        <span className="font-semibold">Product Details</span>
+                      </div>
+                      <div className="space-y-4">
+                        <div className="border-b pb-2">
+                          <p className="text-sm text-muted-foreground">Product Name</p>
+                          <p className="font-semibold text-lg">RBD Palm Olein</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Grade</p>
+                          <p className="font-semibold">IV64</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Packing Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Boxes className="h-5 w-5 text-orange-600" />
+                        <span className="font-semibold">Packing Details</span>
+                      </div>
+                      <div className="space-y-4">
+                        <div className="border-b pb-2">
+                          <p className="text-sm text-muted-foreground">Packing Type</p>
+                          <p className="font-semibold text-lg">Flexibag</p>
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground">Capacity</p>
+                          <p className="font-semibold">20MT</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Product Requirement */}
                 <div>
-                  <h4 className="font-semibold mb-4">Product Information</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Trading Currency</Label>
-                      <p className="font-medium">MYR - Malaysian Ringgit</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Select Refinery</Label>
-                      <p className="font-medium">Pasir Gudang Refinery</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Product Name</Label>
-                      <p className="font-medium">RBD Palm Olein - IV64</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Product Packing</Label>
-                      <p className="font-medium">Flexibag (20MT)</p>
-                    </div>
-                  </div>
-                  <div className="mt-4 space-y-1">
-                    <Label className="text-muted-foreground text-sm">Product Requirement</Label>
-                    <p className="text-sm bg-muted/50 p-3 rounded-lg">
+                  <h4 className="font-semibold mb-3 text-muted-foreground text-sm uppercase tracking-wide">
+                    Product Requirement
+                  </h4>
+                  <div className="bg-muted/50 p-4 rounded-xl border">
+                    <p className="text-sm leading-relaxed">
                       Product must comply with RSPO certification standards. Quality parameters: FFA max 0.1%, M&I max
                       0.1%, IV 56-64.
                     </p>
                   </div>
                 </div>
 
+                {/* Shipping Information - Card Style */}
                 <div className="border-t pt-6">
                   <h4 className="font-semibold mb-4">Shipping Information</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Destination Country</Label>
-                      <p className="font-medium">{request.country}</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Supplier Country</Label>
-                      <p className="font-medium">Malaysia</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Loading Port</Label>
-                      <p className="font-medium">Port Klang, Malaysia</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Destination Port</Label>
-                      <p className="font-medium">
-                        {request.country === "Singapore"
-                          ? "Singapore Port"
-                          : request.country === "Thailand"
-                            ? "Laem Chabang Port"
-                            : request.country === "Vietnam"
-                              ? "Ho Chi Minh Port"
-                              : "Port of Destination"}
-                      </p>
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <Card className="border rounded-xl shadow-sm">
+                      <CardContent className="pt-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <MapPin className="h-5 w-5 text-red-600" />
+                          <span className="font-semibold">Destination</span>
+                        </div>
+                        <div className="space-y-4">
+                          <div className="border-b pb-2">
+                            <p className="text-sm text-muted-foreground">Country</p>
+                            <p className="font-semibold text-lg">{request.country}</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Port</p>
+                            <p className="font-semibold">
+                              {request.country === "Singapore"
+                                ? "Singapore Port"
+                                : request.country === "Thailand"
+                                  ? "Laem Chabang Port"
+                                  : request.country === "Vietnam"
+                                    ? "Ho Chi Minh Port"
+                                    : "Port of Destination"}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="border rounded-xl shadow-sm">
+                      <CardContent className="pt-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Ship className="h-5 w-5 text-blue-600" />
+                          <span className="font-semibold">Origin</span>
+                        </div>
+                        <div className="space-y-4">
+                          <div className="border-b pb-2">
+                            <p className="text-sm text-muted-foreground">Country</p>
+                            <p className="font-semibold text-lg">Malaysia</p>
+                          </div>
+                          <div>
+                            <p className="text-sm text-muted-foreground">Loading Port</p>
+                            <p className="font-semibold">Port Klang</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
 
+                {/* Product Costing - Card Style */}
                 <div className="border-t pt-6">
                   <h4 className="font-semibold mb-4">Product Costing</h4>
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Estimated Volume</Label>
-                      <p className="font-medium">500 MT</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Unit Price (per MT)</Label>
-                      <p className="font-medium">MYR 4,200</p>
-                    </div>
-                    <div className="space-y-1">
-                      <Label className="text-muted-foreground text-sm">Total Estimated Value</Label>
-                      <p className="font-medium text-blue-600">MYR 2,100,000</p>
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <Card className="border rounded-xl shadow-sm">
+                      <CardContent className="pt-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Scale className="h-5 w-5 text-teal-600" />
+                          <span className="font-semibold">Volume</span>
+                        </div>
+                        <div className="border-b pb-2">
+                          <p className="text-sm text-muted-foreground">Estimated Volume</p>
+                          <p className="font-semibold text-2xl">500</p>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-2">Metric Tonnes (MT)</p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="border rounded-xl shadow-sm">
+                      <CardContent className="pt-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <Calculator className="h-5 w-5 text-indigo-600" />
+                          <span className="font-semibold">Unit Price</span>
+                        </div>
+                        <div className="border-b pb-2">
+                          <p className="text-sm text-muted-foreground">Price per MT</p>
+                          <p className="font-semibold text-2xl">4,200</p>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-2">MYR per Metric Tonne</p>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="border rounded-xl shadow-sm bg-blue-50">
+                      <CardContent className="pt-6">
+                        <div className="flex items-center gap-2 mb-4">
+                          <TrendingUp className="h-5 w-5 text-blue-600" />
+                          <span className="font-semibold">Total Value</span>
+                        </div>
+                        <div className="border-b border-blue-200 pb-2">
+                          <p className="text-sm text-blue-600">Estimated Total</p>
+                          <p className="font-bold text-2xl text-blue-700">2,100,000</p>
+                        </div>
+                        <p className="text-sm text-blue-600 mt-2">MYR (Malaysian Ringgit)</p>
+                      </CardContent>
+                    </Card>
                   </div>
                 </div>
               </CardContent>
@@ -597,138 +724,195 @@ export default function ApprovalDetailPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-8">
-                  {/* Sanctions Screening */}
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-lg">Sanctions Screening</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Automated sanctions and watchlist screening results
-                      </p>
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Sanctions Screening Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <AlertTriangle className="h-5 w-5 text-amber-600" />
+                        <span className="font-semibold">Sanctions Screening</span>
+                      </div>
 
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      {/* Status Banner */}
+                      <div className="bg-green-50 border border-green-200 rounded-lg p-3 flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                          <div>
+                            <p className="font-semibold text-green-700 text-sm">Clear</p>
+                            <p className="text-xs text-green-600">No sanctions matches found</p>
+                          </div>
+                        </div>
+                        <Badge className="bg-green-500 text-white text-xs">Verified</Badge>
+                      </div>
+
+                      {/* Screening Details */}
+                      <div className="space-y-3">
+                        <div className="border-b pb-2">
+                          <p className="text-xs text-muted-foreground">Last Screening</p>
+                          <p className="font-semibold">2024-11-28</p>
+                        </div>
+                        <div className="border-b pb-2">
+                          <p className="text-xs text-muted-foreground">Screening Provider</p>
+                          <p className="font-semibold">World-Check</p>
+                        </div>
+                        <div className="border-b pb-2">
+                          <p className="text-xs text-muted-foreground">Risk Level</p>
+                          <Badge variant="outline" className="text-blue-600 border-blue-600 mt-1">
+                            Low
+                          </Badge>
+                        </div>
+                        <div className="pb-2">
+                          <p className="text-xs text-muted-foreground">Next Review</p>
+                          <p className="font-semibold">2024-12-28</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Screening Coverage Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Globe className="h-5 w-5 text-blue-600" />
+                        <span className="font-semibold">Screening Coverage</span>
+                      </div>
+
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-center border-b pb-2">
+                          <div>
+                            <p className="text-xs text-muted-foreground">OFAC SDN List</p>
+                            <p className="font-semibold">United States</p>
+                          </div>
+                          <span className="flex items-center gap-1 text-green-600 text-sm">
+                            <CheckCircle className="h-4 w-4" /> Clear
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center border-b pb-2">
+                          <div>
+                            <p className="text-xs text-muted-foreground">EU Sanctions</p>
+                            <p className="font-semibold">European Union</p>
+                          </div>
+                          <span className="flex items-center gap-1 text-green-600 text-sm">
+                            <CheckCircle className="h-4 w-4" /> Clear
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center border-b pb-2">
+                          <div>
+                            <p className="text-xs text-muted-foreground">UN Sanctions</p>
+                            <p className="font-semibold">United Nations</p>
+                          </div>
+                          <span className="flex items-center gap-1 text-green-600 text-sm">
+                            <CheckCircle className="h-4 w-4" /> Clear
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <p className="text-xs text-muted-foreground">UK Sanctions</p>
+                            <p className="font-semibold">United Kingdom</p>
+                          </div>
+                          <span className="flex items-center gap-1 text-green-600 text-sm">
+                            <CheckCircle className="h-4 w-4" /> Clear
+                          </span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* KYC Documentation Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <FileCheck className="h-5 w-5 text-teal-600" />
+                        <span className="font-semibold">KYC Documentation</span>
+                      </div>
+
+                      {/* Status Banner */}
+                      <div className="bg-green-50 border border-green-200 rounded-lg p-3 flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-2">
+                          <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                          <div>
+                            <p className="font-semibold text-green-700 text-sm">Complete</p>
+                            <p className="text-xs text-green-600">All documents verified</p>
+                          </div>
+                        </div>
+                        <Badge className="bg-green-500 text-white text-xs">Approved</Badge>
+                      </div>
+
+                      {/* KYC Status */}
+                      <div className="space-y-3">
+                        <div className="border-b pb-2">
+                          <p className="text-xs text-muted-foreground">KYC Status</p>
+                          <Badge className="bg-green-500 text-white mt-1">Approved</Badge>
+                        </div>
+                        <div className="border-b pb-2">
+                          <p className="text-xs text-muted-foreground">Approval Date</p>
+                          <p className="font-semibold">2024-01-15</p>
+                        </div>
                         <div>
-                          <p className="font-semibold text-green-700">Clear</p>
-                          <p className="text-sm text-green-600">No sanctions matches found</p>
+                          <p className="text-xs text-muted-foreground">Review Frequency</p>
+                          <p className="font-semibold">Annual</p>
                         </div>
                       </div>
-                      <Badge className="bg-green-500 text-white">Verified</Badge>
-                    </div>
+                    </CardContent>
+                  </Card>
 
-                    <div className="space-y-3">
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Last Screening:</span>
-                        <span className="font-medium">2024-11-28</span>
+                  {/* Required Documents Card */}
+                  <Card className="border rounded-xl shadow-sm">
+                    <CardContent className="pt-6">
+                      <div className="flex items-center gap-2 mb-4">
+                        <FileText className="h-5 w-5 text-indigo-600" />
+                        <span className="font-semibold">Required Documents</span>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Screening Provider:</span>
-                        <span className="font-medium">World-Check</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">Risk Level:</span>
-                        <Badge variant="outline" className="text-blue-600 border-blue-600">
-                          Low
-                        </Badge>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Next Review:</span>
-                        <span className="font-medium">2024-12-28</span>
-                      </div>
-                    </div>
 
-                    <div className="pt-4 border-t">
-                      <h5 className="font-semibold mb-3">Screening Coverage</h5>
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <span>OFAC SDN List</span>
-                          <span className="flex items-center gap-1 text-green-600">
-                            <CheckCircle className="h-4 w-4" /> Clear
-                          </span>
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-center border-b pb-2">
+                          <div>
+                            <p className="text-xs text-muted-foreground">Legal Document</p>
+                            <p className="font-semibold text-sm">Certificate of Incorporation</p>
+                          </div>
+                          <Badge variant="outline" className="text-green-600 border-green-600 text-xs">
+                            <CheckCircle className="h-3 w-3 mr-1" /> Verified
+                          </Badge>
                         </div>
-                        <div className="flex justify-between items-center">
-                          <span>EU Sanctions</span>
-                          <span className="flex items-center gap-1 text-green-600">
-                            <CheckCircle className="h-4 w-4" /> Clear
-                          </span>
+                        <div className="flex justify-between items-center border-b pb-2">
+                          <div>
+                            <p className="text-xs text-muted-foreground">Operating License</p>
+                            <p className="font-semibold text-sm">Business License</p>
+                          </div>
+                          <Badge variant="outline" className="text-green-600 border-green-600 text-xs">
+                            <CheckCircle className="h-3 w-3 mr-1" /> Verified
+                          </Badge>
                         </div>
-                        <div className="flex justify-between items-center">
-                          <span>UN Sanctions</span>
-                          <span className="flex items-center gap-1 text-green-600">
-                            <CheckCircle className="h-4 w-4" /> Clear
-                          </span>
+                        <div className="flex justify-between items-center border-b pb-2">
+                          <div>
+                            <p className="text-xs text-muted-foreground">Financial Records</p>
+                            <p className="font-semibold text-sm">Financial Statements</p>
+                          </div>
+                          <Badge variant="outline" className="text-green-600 border-green-600 text-xs">
+                            <CheckCircle className="h-3 w-3 mr-1" /> Verified
+                          </Badge>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* KYC Documentation */}
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-lg">KYC Documentation</h4>
-                      <p className="text-sm text-muted-foreground">Know Your Customer compliance status</p>
-                    </div>
-
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                        <div>
-                          <p className="font-semibold text-green-700">Complete</p>
-                          <p className="text-sm text-green-600">All required documents verified</p>
-                        </div>
-                      </div>
-                      <Badge className="bg-green-500 text-white">Approved</Badge>
-                    </div>
-
-                    <div className="pt-2">
-                      <h5 className="font-semibold mb-3">Required Documents</h5>
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <span>Certificate of Incorporation</span>
-                          <Badge variant="outline" className="text-green-600 border-green-600">
+                        <div className="flex justify-between items-center border-b pb-2">
+                          <div>
+                            <p className="text-xs text-muted-foreground">Ownership Structure</p>
+                            <p className="font-semibold text-sm">Beneficial Ownership</p>
+                          </div>
+                          <Badge variant="outline" className="text-green-600 border-green-600 text-xs">
                             <CheckCircle className="h-3 w-3 mr-1" /> Verified
                           </Badge>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span>Business License</span>
-                          <Badge variant="outline" className="text-green-600 border-green-600">
-                            <CheckCircle className="h-3 w-3 mr-1" /> Verified
-                          </Badge>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span>Financial Statements</span>
-                          <Badge variant="outline" className="text-green-600 border-green-600">
-                            <CheckCircle className="h-3 w-3 mr-1" /> Verified
-                          </Badge>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span>Beneficial Ownership</span>
-                          <Badge variant="outline" className="text-green-600 border-green-600">
-                            <CheckCircle className="h-3 w-3 mr-1" /> Verified
-                          </Badge>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span>Director Identification</span>
-                          <Badge variant="outline" className="text-green-600 border-green-600">
+                          <div>
+                            <p className="text-xs text-muted-foreground">Identity Verification</p>
+                            <p className="font-semibold text-sm">Director Identification</p>
+                          </div>
+                          <Badge variant="outline" className="text-green-600 border-green-600 text-xs">
                             <CheckCircle className="h-3 w-3 mr-1" /> Verified
                           </Badge>
                         </div>
                       </div>
-                    </div>
-
-                    <div className="pt-4 border-t space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-muted-foreground">KYC Status:</span>
-                        <Badge className="bg-green-500 text-white">Approved</Badge>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-muted-foreground">Approval Date:</span>
-                        <span className="font-medium">2024-01-15</span>
-                      </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 </div>
               </CardContent>
             </Card>
@@ -823,11 +1007,11 @@ export default function ApprovalDetailPage() {
             </Card>
 
             {/* Decision Panel */}
-            <Card className="border-2 border-primary">
-              <CardHeader>
-                <CardTitle>Make Decision</CardTitle>
+            <Card className="border-2 border-red-500 bg-red-50">
+              <CardHeader className="bg-red-100 rounded-t-lg">
+                <CardTitle className="text-red-800">Make Decision</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 pt-4">
                 <div className="grid grid-cols-1 gap-3">
                   <Button
                     variant={decision === "approved" ? "default" : "outline"}

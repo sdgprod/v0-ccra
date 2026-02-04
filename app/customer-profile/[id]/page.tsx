@@ -560,32 +560,32 @@ export default function CustomerProfilePage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="bg-gray-100">
-                      <td className="px-4 py-3 text-sm">Strategic Importance</td>
+                    <tr className="bg-gray-50">
+                      <td className="px-4 py-3 text-sm font-medium">Strategic Importance</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.tier === "1" ? "High" : customer.tier === "2" ? "Medium" : "Low"}
                       </td>
-                      <td className="px-4 py-3 text-sm">
+                      <td className="px-4 py-3 text-sm text-muted-foreground">
                         Indicates alignment with the Groups long-term business goals. Assessed via contract value,
                         duration, and strategic role.
                       </td>
                     </tr>
-                    <tr className="bg-gray-200">
-                      <td className="px-4 py-3 text-sm">Digital Footprint</td>
+                    <tr className="bg-gray-100">
+                      <td className="px-4 py-3 text-sm font-medium">Digital Footprint</td>
                       <td className="px-4 py-3 text-sm">{customer.type === "MNC" ? "Very Good" : "Good"}</td>
-                      <td className="px-4 py-3 text-sm">
+                      <td className="px-4 py-3 text-sm text-muted-foreground">
                         Complete financial and certification data from third party sources.
                       </td>
                     </tr>
-                    <tr className="bg-gray-100">
-                      <td className="px-4 py-3 text-sm">External Rating</td>
+                    <tr className="bg-gray-50">
+                      <td className="px-4 py-3 text-sm font-medium">External Rating</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.creditScore >= 750 ? "Very High" : customer.creditScore >= 650 ? "High" : "Medium"}
                       </td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
-                    <tr className="bg-gray-200">
-                      <td className="px-4 py-3 text-sm">Independent Credit Rating</td>
+                    <tr className="bg-gray-100">
+                      <td className="px-4 py-3 text-sm font-medium">Independent Credit Rating</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.riskRating === "Low"
                           ? "Low Risk - AAA"
@@ -593,62 +593,62 @@ export default function CustomerProfilePage() {
                             ? "Medium Risk - BBB"
                             : "High Risk - BB"}
                       </td>
-                      <td className="px-4 py-3 text-sm">Sourced from Dunn & Bradstreet Report</td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground">Sourced from Dunn & Bradstreet Report</td>
                     </tr>
-                    <tr className="bg-gray-100">
-                      <td className="px-4 py-3 text-sm">Entity Type</td>
+                    <tr className="bg-gray-50">
+                      <td className="px-4 py-3 text-sm font-medium">Entity Type</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.type === "MNC" ? "Public Limited" : "Private Limited"}
                       </td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
-                    <tr className="bg-gray-200">
-                      <td className="px-4 py-3 text-sm">Years in Operation</td>
+                    <tr className="bg-gray-100">
+                      <td className="px-4 py-3 text-sm font-medium">Years in Operation</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.tier === "1" ? "15 Years" : customer.tier === "2" ? "10 Years" : "5 Years"}
                       </td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
-                    <tr className="bg-gray-100">
-                      <td className="px-4 py-3 text-sm">Business History with SDG/SDPB</td>
+                    <tr className="bg-gray-50">
+                      <td className="px-4 py-3 text-sm font-medium">Business History with SDG/SDPB</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.tier === "1" ? "10 Years" : customer.tier === "2" ? "7 Years" : "3 Years"}
                       </td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
-                    <tr className="bg-gray-200">
-                      <td className="px-4 py-3 text-sm">Country Risk</td>
+                    <tr className="bg-gray-100">
+                      <td className="px-4 py-3 text-sm font-medium">Country Risk</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.country === "Singapore" ? "12" : customer.country === "Malaysia" ? "15" : "18"}
                       </td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
-                    <tr className="bg-gray-100">
-                      <td className="px-4 py-3 text-sm">Contract frequency and volume trends</td>
+                    <tr className="bg-gray-50">
+                      <td className="px-4 py-3 text-sm font-medium">Contract frequency and volume trends</td>
                       <td className="px-4 py-3 text-sm">
                         {customer.riskRating === "Low" ? "Stable / Growing" : "Stable"}
                       </td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
-                    <tr className="bg-gray-200">
-                      <td className="px-4 py-3 text-sm">Default History</td>
+                    <tr className="bg-gray-100">
+                      <td className="px-4 py-3 text-sm font-medium">Default History</td>
                       <td className="px-4 py-3 text-sm">{customer.riskRating === "High" ? "Minor" : "None"}</td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
-                    <tr className="bg-gray-100">
-                      <td className="px-4 py-3 text-sm">Sanction</td>
+                    <tr className="bg-gray-50">
+                      <td className="px-4 py-3 text-sm font-medium">Sanction</td>
                       <td className="px-4 py-3 text-sm">Pass</td>
-                      <td className="px-4 py-3 text-sm"></td>
-                    </tr>
-                    <tr className="bg-gray-200">
-                      <td className="px-4 py-3 text-sm">Governance</td>
-                      <td className="px-4 py-3 text-sm">{customer.type === "MNC" ? "Yes" : "Partial"}</td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
                     <tr className="bg-gray-100">
-                      <td className="px-4 py-3 text-sm">Sustainability Goals</td>
+                      <td className="px-4 py-3 text-sm font-medium">Governance</td>
+                      <td className="px-4 py-3 text-sm">{customer.type === "MNC" ? "Yes" : "Partial"}</td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
+                    </tr>
+                    <tr className="bg-gray-50">
+                      <td className="px-4 py-3 text-sm font-medium">Sustainability Goals</td>
                       <td className="px-4 py-3 text-sm">{customer.tier === "1" ? "Yes" : "Not Applicable"}</td>
-                      <td className="px-4 py-3 text-sm"></td>
+                      <td className="px-4 py-3 text-sm text-muted-foreground"></td>
                     </tr>
                   </tbody>
                 </table>

@@ -165,7 +165,7 @@ export default function DashboardPage() {
     setPortfolio2Loading(true)
     try {
       const response = await fetch(
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CM_Dummy_CSV-4EnIlWBbAqA22lDkJZao8wdaKc11Ek.csv",
+        "/images/cm-dummy-csv.csv",
       )
       const csvText = await response.text()
 
@@ -594,7 +594,6 @@ export default function DashboardPage() {
                 <p className="text-4xl font-bold mt-2">
                   MYR {dashboardStats.totalExposure.toLocaleString("en-MY", { maximumFractionDigits: 0 })}
                 </p>
-                <p className="text-sm text-slate-300 mt-2">Shareholder funds</p>
               </div>
               <div className="rounded-lg bg-slate-700 p-2.5">
                 <DollarSign className="h-5 w-5 text-slate-300" />
