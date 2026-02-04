@@ -92,7 +92,8 @@ export default function DashboardPage() {
 
     // Calculate average credit score based on ratings
     // Convert ratings to numeric scores: High=800, Medium=650, Low=500
-    const ratingToScore = (rating: string) => {
+    const ratingToScore = (rating: string | undefined) => {
+      if (!rating) return 500
       const r = rating.toLowerCase()
       if (r.includes("high")) return 800
       if (r.includes("medium")) return 650
